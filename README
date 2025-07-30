@@ -1,0 +1,19 @@
+# 📝 Guestbook App
+
+A simple guestbook web app built with **Next.js** for the front-end and **Node.js (Express)** for the back-end.
+
+---
+
+## ✨ Features
+
+- Submit messages to the guestbook.
+- View a list of all messages.
+- Simple and clean UI using Tailwind CSS.
+- Backend API built with Express.
+- Fully local and beginner-friendly.
+
+---
+
+## 📂 Project Structure
+
+h
