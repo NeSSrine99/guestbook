@@ -7,18 +7,18 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
-  // Fetch messages on mount
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
   useEffect(() => {
-    fetch("http://localhost:3001/messages")
+    fetch(`${API_URL}/messages`)
       .then((res) => res.json())
-      .then((data) => setMessages(data))
-      .catch((err) => console.error("Error:", err));
+      .then((data) => setMessages(data));
   }, []);
 
   // Submit message
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:3001/messages", {
+    const res = await fetch(`${API_URL}/messages`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, text: message }),
